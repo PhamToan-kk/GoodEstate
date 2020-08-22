@@ -8,10 +8,7 @@ const fontFamilies = {
 
 
 export const Fonts = StyleSheet.create({
-
-
-    //TEXT
-  
+    //TEXT  
     normalFontFamily:{
         fontFamily:Platform.OS?fontFamilies.normal_OS:fontFamilies.normal_OS
     },

@@ -21,7 +21,7 @@ export const VectorIcon = (props) => {
         MaterialCommunityIcons,
         MaterialIcons,
         FontAwesome5,
-        Foundation
+        Foundation,
     } = props;
     if (Ionicons) {
         return <MIonicons {...props} />

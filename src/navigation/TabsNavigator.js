@@ -1,19 +1,21 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {useState} from 'react';
-import {
-  HomeStackScreens,
-  HistoryStackScreens,
-  SearchStackScreens,
-} from './StacksNavigator';
+
+import{
+  HomeScreen,
+  SearchScreen,
+  HistoryScreen
+} from '../containers'
 import AnimatedTabBar from '@gorhom/animated-tabbar';
 import {VectorIcon} from '../components';
+import {Colors} from '../styles'
 const Tab = createBottomTabNavigator();
 
 const tabs = {
   HomeStack: {
     // < Screen name
     labelStyle: {
-      color: '#1194AA',
+      color: Colors.Cornflower_Blue,
     },
     icon: {
       component: () => (
@@ -21,49 +23,49 @@ const tabs = {
           MaterialCommunityIcons
           name="home"
           size={25}
-          color={'gray'}
+          color={Colors.Cornflower_Blue}
         />
       ),
-      activeColor: 'rgba(17,148,170,1)',
-      inactiveColor: 'blue',
+      activeColor: Colors.Cornflower_Blue,
+      // inactiveColor: 'red',
     },
     background: {
-      activeColor: 'rgba(207,235,239,1)',
-      inactiveColor: 'rgba(207,235,239,0)',
+      activeColor: Colors.Lavender
+      // inactiveColor: 'rgba(207,235,239,0)',
     },
   },
   SearchStack: {
     // < Screen name
     labelStyle: {
-      color: '#1194AA',
+      color: Colors.Cornflower_Blue,
     },
     icon: {
       component: () => (
-        <VectorIcon MaterialCommunityIcons name="layers-search-outline" color={'gray'} size={23} />
+        <VectorIcon MaterialCommunityIcons name="layers-search-outline" color={Colors.Cornflower_Blue} size={23} />
       ),
-      activeColor: 'rgba(17,148,170,1)',
+      activeColor: Colors.Cornflower_Blue,
       inactiveColor: 'blue',
     },
     background: {
-      activeColor: 'rgba(207,235,239,1)',
+      activeColor: Colors.Lavender,
       inactiveColor: 'rgba(207,235,239,0)',
     },
   },
   HistoryStack: {
     // < Screen name
     labelStyle: {
-      color: '#1194AA',
+      color: Colors.Cornflower_Blue,
     },
     icon: {
       component: () => (
-        <VectorIcon FontAwesome5 name="hornbill" color={'gray'} size={23} />
+        <VectorIcon FontAwesome5 name="hornbill" color={Colors.Cornflower_Blue} size={23} />
 
       ),
-      activeColor: 'rgba(17,148,170,1)',
+      activeColor: Colors.Cornflower_Blue,
       inactiveColor: 'blue',
     },
     background: {
-      activeColor: 'rgba(207,235,239,1)',
+      activeColor: Colors.Lavender,
       inactiveColor: 'rgba(207,235,239,0)',
     },
   },
@@ -81,9 +83,9 @@ export const TabsNavigator = () => {
           // itemOuterSpace	={15}
         />
       )}>
-      <Tab.Screen component={HomeStackScreens} name={'HomeStack'} />
-      <Tab.Screen component={SearchStackScreens} name={'SearchStack'} />
-      <Tab.Screen component={HistoryStackScreens} name={'HistoryStack'} />
+      <Tab.Screen component={HomeScreen} name={'HomeStack'} />
+      <Tab.Screen component={SearchScreen} name={'SearchStack'} />
+      <Tab.Screen component={HistoryScreen} name={'HistoryStack'} />
     </Tab.Navigator>
   );
 };

@@ -97,5 +97,13 @@ export const Colors = {
     green_opacity: 'rgb(236, 244, 243)',
     green_txt_btn: 'rgb(159, 191, 185)',
     Bright_Turquoise: 'rgb(109, 175, 162)',
-    opacity_gray:'rgba(147,154,155,0.5)'
+    opacity_gray:'rgba(147,154,155,0.5)',
+    Cornflower_Blue:'rgb(76,120,230)',
+    Cornflower_Blue_Opacity:'rgba(76,120,230,0.3)',
+    Lavender:'rgb(236,241,253)',
+    Sapphire:'#02143F',
+    Link_Water:'rgb(205,210,224)',
+    gray_Text:'rgb(204,209,224)'
+
+
 }

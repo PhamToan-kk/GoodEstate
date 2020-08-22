@@ -9,17 +9,24 @@ import {
     HistoryScreen,
     HomeScreen,
     ResultScreen,
-    SearchScreen
+    SearchScreen,
+    SinglePositionMap
+
     
 } from '../containers'
+import {
+    TabsNavigator
+} from './TabsNavigator'
 const HomeStack = createStackNavigator()
 const SearchStack = createStackNavigator()
 const HistoryStack = createStackNavigator()
 const AuthStack = createStackNavigator()
+const MainStack = createStackNavigator()
 
 export const AuthStackScreens = ({navigation})=>{
     return(
-        <AuthStack.Navigator>
+        <AuthStack.Navigator
+        >
             <AuthStack.Screen component={SignInScreen} name={'SignIn'}/>
             <AuthStack.Screen component={RegisterScreen} name={'Register'}/>
             <AuthStack.Screen component={ResetPassWordScreen} name={'ResetPassWord'}/>
@@ -27,29 +34,18 @@ export const AuthStackScreens = ({navigation})=>{
     )
 }
 
-export const SearchStackScreens = ({navigation})=>{
+export const MainStackScreens = ()=>{
     return(
-        <SearchStack.Navigator>
-            <SearchStack.Screen component={SearchScreen} name={'Search'} />
-            <SearchStack.Screen component={ResultScreen} name={'Result'} />
-            <SearchStack.Screen component={DetailResultScreen} name={'DetailResult'} />
-        </SearchStack.Navigator>
-    )
-}
-
-export const HomeStackScreens = ({navigation})=>{
-    return(
-        <HomeStack.Navigator>
-            <HomeStack.Screen component={HomeScreen} name={'Home'}/>
-            <SearchStack.Screen component={DetailResultScreen} name={'DetailResult'} />
-        </HomeStack.Navigator>
-    )
-}
-
-export const HistoryStackScreens = ({navigation})=>{
-    return(
-        <HistoryStack.Navigator>
-            <HistoryStack.Screen component={HistoryScreen} name={'history'}/>
-        </HistoryStack.Navigator>
+        <MainStack.Navigator
+        initialRouteName="Main"
+        screenOptions={{
+            headerShown:false
+        }}
+        >
+            <MainStack.Screen component={TabsNavigator} name={'Main'} />
+            <MainStack.Screen component={DetailResultScreen} name={'DetailResult'}/>
+            <MainStack.Screen component={ResultScreen} name={'Result'}/>   
+            <MainStack.Screen component={SinglePositionMap} name={'SinglePositionMap'}/>   
+        </MainStack.Navigator>
     )
 }

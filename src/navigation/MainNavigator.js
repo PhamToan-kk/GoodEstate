@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {TabsNavigator} from './TabsNavigator'
-import {AuthStackScreens} from './StacksNavigator'
+import {AuthStackScreens,MainStackScreens} from './StacksNavigator'
 import 'react-native-gesture-handler';
 
 const AppXX = ({
@@ -10,7 +10,11 @@ const AppXX = ({
     const isSignIn = true
     return(
         <NavigationContainer>
-               {isSignIn ?  <TabsNavigator/> : <AuthStackScreens/> }
+               {isSignIn ?  
+
+               <MainStackScreens/> : 
+               <AuthStackScreens/> 
+               }
         </NavigationContainer>
     )
 };
