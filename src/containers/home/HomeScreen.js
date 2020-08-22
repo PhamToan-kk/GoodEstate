@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     // backgroundColor: Colors.white,
   },
   header:{
-    marginTop:50,
+    marginTop:Platform.OS ? 50 : 20,
     marginHorizontal:15,
     height:50 ,
     alignItems:'flex-start',
