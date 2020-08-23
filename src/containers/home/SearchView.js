@@ -23,8 +23,10 @@ const SearchView = ({
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         flexDirection:'row',
+        margin:10,
+        height:50
+
         // alignItems:'center'
     },
     txtSearch:{

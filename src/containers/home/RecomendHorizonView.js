@@ -20,7 +20,10 @@ const RecomendHorizonView = (props) =>
 
         const iiemStyles= StyleSheet.create({
             container:{
-                width:270,height:330,marginRight:10,backgroundColor:'white'
+                width:270,
+                height:330,
+                marginRight:10,
+                backgroundColor:Colors.white
             },
             headerTxt:{
                 fontSize:20,
@@ -35,20 +38,19 @@ const RecomendHorizonView = (props) =>
             },
             content:{
                 flex:1,
-                flexDirection:'row',
-                justifyContent:'space-between',
-                alignItems:'center'
+                ...StyleSheet.row_between_center_View
             },
             starTxt:{
                 fontSize:15,
                 fontWeight:'600',
                 color:Colors.Sapphire,
-                marginHorizontal:5
+                marginHorizontal:5,
+                marginTop:10
             },
             $Txt:{
                 fontSize:15,
                 fontWeight:'800',
-                color:'rgb(6,23,66)',
+                color:Colors.Sapphire,
             },
             heartView:{
                 width:50,
@@ -58,15 +60,16 @@ const RecomendHorizonView = (props) =>
                 backgroundColor:Colors.Cornflower_Blue
             }
         })
-        return(
-            <Morph style={iiemStyles.container}>
-                    <View style={{flex:1}}>
+    const RenderImageHeader=()=>(
+            <View style={{flex:1}}>
                         <Image
                         source={{uri:item.imageUrl}}
                         style={{width:'100%',height:'100%',borderRadius: 12,}}
                         ></Image>
-                    </View>
-                    <View style={{flex:1,paddingHorizontal:10}}>
+            </View>
+        )
+    const RenderContentItem = ()=>(
+        <View style={{flex:1,paddingHorizontal:10}}>
                         <View style={{flex:1,justifyContent:'center'}}>
                             <Text style={iiemStyles.headerTxt}>{item.type}</Text>
                         </View>
@@ -77,22 +80,27 @@ const RecomendHorizonView = (props) =>
                                 <Text style={iiemStyles.starTxt}>4.5</Text>
                             </View>
                         </View>
-                        <View style={{flex:2,justifyContent:'space-between',alignItems:'center',flexDirection:'row'}}>
+                        <View style={{flex:2,...Styles.row_between_center_View}}>
                             <Text style={iiemStyles.$Txt}>
                                 $ <Text style={{fontSize:25}}>{item.price}</Text>
                             </Text>
-                            <Morph style={{width:60,height:60,borderRadius:30,justifyContent:'center',alignItems:'center'}}>
+                            <Morph style={{width:60,height:60,borderRadius:30,...Styles.mid_centerView}}>
                                 <View style={iiemStyles.heartView}>
                                     <VectorIcon AntDesign name="heart" size={18} color="white"/>
                                 </View>
                             </Morph>
                         </View>
-
                     </View>
+    )    
+        return(
+            <Morph style={iiemStyles.container}>
+                <RenderImageHeader/>
+                <RenderContentItem/>
             </Morph>
         )
     }
-    return(
+
+return(
     <View style={{flex:1}}>
         <View style={styles.header}>
             <Text style={styles.headerTxt}>Luxury Apartment</Text>
@@ -117,10 +125,8 @@ const RecomendHorizonView = (props) =>
 const styles = StyleSheet.create({
     header:{
         flex:1,
-        flexDirection:'row',
-        justifyContent:'space-between',
+       ...Styles.row_between_center_View,
         paddingRight:10,
-        alignItems:'center'
     },
     listViews:{
         flex:6,

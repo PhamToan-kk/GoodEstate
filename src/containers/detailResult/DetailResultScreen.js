@@ -27,6 +27,7 @@ export const DetailResultScreen = (props) => {
   const data = route.params.item
   const imageUrl = route.params.item.imageUrl;
   const imagesUrls = ['https://media-cdn.tripadvisor.com/media/vr-splice-j/09/87/0a/7b.jpg', imageUrl, imageUrl];
+  const sheetRef = React.useRef(null);
 
 
   const renderHeader = () => (
@@ -36,9 +37,6 @@ export const DetailResultScreen = (props) => {
       </View>
     </View>
   )
-
-
-  const sheetRef = React.useRef(null);
 
   return (
     <View
@@ -67,7 +65,7 @@ export const DetailResultScreen = (props) => {
         ref={sheetRef}
         snapPoints={[550,200]}
         renderContent={()=><InnnerSheet data={data} navigation={navigation}/>}
-		  enabledInnerScrolling={false}
+		    enabledInnerScrolling={false}
       />
     </View>
   );
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
 	 height: 9,
 	 borderRadius: 4.5, 
 	 borderWidth:1,
-	 borderColor:'white',
+	 borderColor:Colors.white,
 	 margin:6
   },
   activeDot:{

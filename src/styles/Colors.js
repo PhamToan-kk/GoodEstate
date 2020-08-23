@@ -103,7 +103,9 @@ export const Colors = {
     Lavender:'rgb(236,241,253)',
     Sapphire:'#02143F',
     Link_Water:'rgb(205,210,224)',
-    gray_Text:'rgb(204,209,224)'
-
+    gray_Text:'rgb(204,209,224)',
+    Linear_white1: 'rgb(255,255,255)',
+    Linear_white2:'rgb(247,247,247)',
+    Linear_white3:'rgb(244,244,244)'
 
 }
