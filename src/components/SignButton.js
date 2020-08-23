@@ -1,10 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-const SignButton = ({title, submitHandler}) => {
+const SignButton = (props) => {
   return (
-    <TouchableOpacity style={styles.submitButton} onPress={submitHandler}>
-      <Text style={styles.submitText}>{title}</Text>
+    <TouchableOpacity style={styles.submitButton} onPress={props.submitHandler}>
+      <Text style={styles.submitText}>{props.title}</Text>
+      {props.children}
     </TouchableOpacity>
   );
 };
@@ -13,6 +14,7 @@ export default SignButton;
 
 const styles = StyleSheet.create({
   submitButton: {
+    flexDirection:'row',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

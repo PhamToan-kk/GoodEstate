@@ -1,8 +1,8 @@
 import React from 'react';
-import {LoginScreen} from './src/containers';
+import {UserProfile} from './src/containers/profile';
 
 const App = () => {
-  return <LoginScreen />;
+  return <UserProfile />;
 };
 
 export default App;
