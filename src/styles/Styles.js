@@ -52,5 +52,4 @@ export const Styles = {
         alignItems:'flex-end',
     },
 
-
 }
