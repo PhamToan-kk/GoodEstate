@@ -15,7 +15,7 @@ export const UserProfile = () => {
     <View style={styles.profileContainer}>
       <Image
         style={styles.userAvatar}
-        source={require('../../assets/avatar.jpg')}
+        source={require('../../assets/avatar1.jpg')}
       />
       <Text style={styles.userName}>Kim So Na</Text>
       <Text>aafafafjabjf</Text>
