@@ -10,10 +10,10 @@ import {
   ImageBackground,
   Image,
 } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import SignInAction from './SignInAction';
 import SignUpAction from './SignUpAction';
+import {VectorIcon} from '../../components';
 
 export const LoginScreen = () => {
   const [isEnabled, setIsEnabled] = useState(true);
@@ -28,7 +28,9 @@ export const LoginScreen = () => {
         />
         <Text style={styles.logoText}></Text>
       </View>
-    ),[]);
+    ),
+    [],
+  );
 
   const RenderTabBar = useCallback(
     () => (
@@ -44,7 +46,8 @@ export const LoginScreen = () => {
                 borderBottomLeftRadius: width / 2 / 2,
               },
             ]}>
-            <FontAwesome
+            <VectorIcon
+              FontAwesome
               name="sign-in"
               size={30}
               color={isEnabled ? 'white' : 'black'}
@@ -61,7 +64,8 @@ export const LoginScreen = () => {
                 borderBottomRightRadius: width / 2 / 2,
               },
             ]}>
-            <FontAwesome
+            <VectorIcon
+              FontAwesome
               name="registered"
               size={30}
               color={isEnabled ? 'black' : 'white'}
@@ -69,7 +73,9 @@ export const LoginScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    ),[isEnabled]);
+    ),
+    [isEnabled],
+  );
 
   return (
     <SafeAreaView style={styles.container}>
