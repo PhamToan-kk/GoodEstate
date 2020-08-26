@@ -18,63 +18,56 @@ import {VectorIcon} from '../../components';
 export const LoginScreen = () => {
   const [isEnabled, setIsEnabled] = useState(true);
 
-  const RenderHeader = useCallback(
-    () => (
-      <View style={styles.header}>
-        <Image
-          style={styles.logo}
-          source={require('../../assets/logo2.png')}
-          resizeMode={'contain'}
-        />
-        <Text style={styles.logoText}></Text>
-      </View>
-    ),
-    [],
+  const RenderHeader = () => (
+    <View style={styles.header}>
+      <Image
+        style={styles.logo}
+        source={require('../../assets/logo2.png')}
+        resizeMode={'contain'}
+      />
+      <Text style={styles.logoText}></Text>
+    </View>
   );
+  const RenderTabBar = () => (
+    <View style={styles.tabBar}>
+      <View style={styles.box}>
+        <TouchableOpacity
+          onPress={() => setIsEnabled(true)}
+          style={[
+            styles.item,
+            {
+              backgroundColor: isEnabled ? 'coral' : 'white',
+              borderTopLeftRadius: width / 2 / 2,
+              borderBottomLeftRadius: width / 2 / 2,
+            },
+          ]}>
+          <VectorIcon
+            FontAwesome
+            name="sign-in"
+            size={30}
+            color={isEnabled ? 'white' : 'black'}
+          />
+        </TouchableOpacity>
 
-  const RenderTabBar = useCallback(
-    () => (
-      <View style={styles.tabBar}>
-        <View style={styles.box}>
-          <TouchableOpacity
-            onPress={() => setIsEnabled(true)}
-            style={[
-              styles.item,
-              {
-                backgroundColor: isEnabled ? 'coral' : 'white',
-                borderTopLeftRadius: width / 2 / 2,
-                borderBottomLeftRadius: width / 2 / 2,
-              },
-            ]}>
-            <VectorIcon
-              FontAwesome
-              name="sign-in"
-              size={30}
-              color={isEnabled ? 'white' : 'black'}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setIsEnabled(false)}
-            style={[
-              styles.item,
-              {
-                backgroundColor: isEnabled ? 'white' : 'coral',
-                borderTopRightRadius: width / 2 / 2,
-                borderBottomRightRadius: width / 2 / 2,
-              },
-            ]}>
-            <VectorIcon
-              FontAwesome
-              name="registered"
-              size={30}
-              color={isEnabled ? 'black' : 'white'}
-            />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          onPress={() => setIsEnabled(false)}
+          style={[
+            styles.item,
+            {
+              backgroundColor: isEnabled ? 'white' : 'coral',
+              borderTopRightRadius: width / 2 / 2,
+              borderBottomRightRadius: width / 2 / 2,
+            },
+          ]}>
+          <VectorIcon
+            FontAwesome
+            name="registered"
+            size={30}
+            color={isEnabled ? 'black' : 'white'}
+          />
+        </TouchableOpacity>
       </View>
-    ),
-    [isEnabled],
+    </View>
   );
 
   return (

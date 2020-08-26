@@ -10,17 +10,18 @@ import {
 
 import {MenuItem, MenuWapper, VectorIcon} from '../../components';
 
+const RenderProfile = () => (
+  <View style={styles.profileContainer}>
+    <Image
+      style={styles.userAvatar}
+      source={require('../../assets/avatar1.jpg')}
+    />
+    <Text style={styles.userName}>Kim So Na</Text>
+    <Text>aafafafjabjf</Text>
+  </View>
+);
+
 export const UserProfile = () => {
-  const RenderProfile = () => (
-    <View style={styles.profileContainer}>
-      <Image
-        style={styles.userAvatar}
-        source={require('../../assets/avatar1.jpg')}
-      />
-      <Text style={styles.userName}>Kim So Na</Text>
-      <Text>aafafafjabjf</Text>
-    </View>
-  );
   return (
     <View style={styles.container}>
       <ImageBackground

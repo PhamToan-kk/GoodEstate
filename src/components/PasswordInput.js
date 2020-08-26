@@ -1,24 +1,25 @@
 import React from 'react';
 import {StyleSheet, TextInput, View, TouchableOpacity} from 'react-native';
 
-import {signInputStyles} from '../styles/signInputStyles';
 import {VectorIcon} from './VectorIcon';
+import {Styles} from '../styles';
 
-export const PasswordInput = ({
-  onchangeTextHandler,
-  val,
-  onBlurHandler,
-  sercureTextState,
-  secureTextEntryHandler,
-  placeholderText,
-}) => {
+export const PasswordInput = (props) => {
+  const {
+    onchangeTextHandler,
+    val,
+    onBlurHandler,
+    sercureTextState,
+    secureTextEntryHandler,
+    placeholderText,
+  } = props;
   return (
-    <View style={styles.inputField}>
-      <View style={styles.iconSign}>
+    <View style={Styles.inputField}>
+      <View style={Styles.iconSign}>
         <VectorIcon MaterialIcons name="lock" size={30} color="gray" />
       </View>
       <TextInput
-        style={styles.txtInput}
+        style={Styles.txtInput}
         placeholder={placeholderText}
         secureTextEntry={sercureTextState ? true : false}
         onChangeText={onchangeTextHandler}
@@ -39,6 +40,5 @@ export const PasswordInput = ({
 };
 
 const styles = StyleSheet.create({
-  ...signInputStyles,
   iconInfo: {},
 });

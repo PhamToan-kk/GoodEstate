@@ -1,14 +1,15 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {useState} from 'react';
 
-import{
+import {
   HomeScreen,
   SearchScreen,
-  HistoryScreen
-} from '../containers'
+  HistoryScreen,
+  UserProfile,
+} from '../containers';
 import AnimatedTabBar from '@gorhom/animated-tabbar';
 import {VectorIcon} from '../components';
-import {Colors} from '../styles'
+import {Colors} from '../styles';
 const Tab = createBottomTabNavigator();
 
 const tabs = {
@@ -30,7 +31,7 @@ const tabs = {
       // inactiveColor: 'red',
     },
     background: {
-      activeColor: Colors.Lavender
+      activeColor: Colors.Lavender,
       // inactiveColor: 'rgba(207,235,239,0)',
     },
   },
@@ -41,7 +42,12 @@ const tabs = {
     },
     icon: {
       component: () => (
-        <VectorIcon MaterialCommunityIcons name="layers-search-outline" color={Colors.Cornflower_Blue} size={23} />
+        <VectorIcon
+          MaterialCommunityIcons
+          name="layers-search-outline"
+          color={Colors.Cornflower_Blue}
+          size={23}
+        />
       ),
       activeColor: Colors.Cornflower_Blue,
       inactiveColor: 'blue',
@@ -58,8 +64,12 @@ const tabs = {
     },
     icon: {
       component: () => (
-        <VectorIcon FontAwesome5 name="hornbill" color={Colors.Cornflower_Blue} size={23} />
-
+        <VectorIcon
+          FontAwesome5
+          name="hornbill"
+          color={Colors.Cornflower_Blue}
+          size={23}
+        />
       ),
       activeColor: Colors.Cornflower_Blue,
       inactiveColor: 'blue',
@@ -85,7 +95,7 @@ export const TabsNavigator = () => {
       )}>
       <Tab.Screen component={HomeScreen} name={'HomeStack'} />
       <Tab.Screen component={SearchScreen} name={'SearchStack'} />
-      <Tab.Screen component={HistoryScreen} name={'HistoryStack'} />
+      <Tab.Screen component={UserProfile} name={'HistoryStack'} />
     </Tab.Navigator>
   );
 };
