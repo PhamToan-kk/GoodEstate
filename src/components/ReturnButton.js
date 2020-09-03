@@ -4,7 +4,11 @@ import {VectorIcon} from './VectorIcon'
 import {Colors,Styles} from '../styles'
 export const ReturnButton = (props) => 
 {
-  return(<TouchableOpacity style={styles.container} {...props}>
+    const {
+        style,
+        onPress
+    } = props
+  return(<TouchableOpacity style={[styles.container,style]} onPress={onPress}>
         <VectorIcon Ionicons name="arrow-back" size={18} color={Colors.Cornflower_Blue}/>
     </TouchableOpacity>)
 };

@@ -10,8 +10,8 @@ import {
     HomeScreen,
     ResultScreen,
     SearchScreen,
-    SinglePositionMap
-
+    SinglePositionMap,
+    ProfileScreen
     
 } from '../containers'
 import {
@@ -42,6 +42,8 @@ export const MainStackScreens = ()=>{
             headerShown:false
         }}
         >
+            <MainStack.Screen component={SearchScreen} name={'Search'} />
+            <MainStack.Screen component={ProfileScreen} name={'Profile'} />
             <MainStack.Screen component={TabsNavigator} name={'Main'} />
             <MainStack.Screen component={DetailResultScreen} name={'DetailResult'}/>
             <MainStack.Screen component={ResultScreen} name={'Result'}/>   

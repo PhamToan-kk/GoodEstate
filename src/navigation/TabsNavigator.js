@@ -4,7 +4,8 @@ import React, {useState} from 'react';
 import{
   HomeScreen,
   SearchScreen,
-  HistoryScreen
+  HistoryScreen,
+  CompareScreen
 } from '../containers'
 import AnimatedTabBar from '@gorhom/animated-tabbar';
 import {VectorIcon} from '../components';
@@ -12,7 +13,7 @@ import {Colors} from '../styles'
 const Tab = createBottomTabNavigator();
 
 const tabs = {
-  HomeStack: {
+  Home: {
     // < Screen name
     labelStyle: {
       color: Colors.Cornflower_Blue,
@@ -34,7 +35,7 @@ const tabs = {
       // inactiveColor: 'rgba(207,235,239,0)',
     },
   },
-  SearchStack: {
+  Comparision: {
     // < Screen name
     labelStyle: {
       color: Colors.Cornflower_Blue,
@@ -51,7 +52,7 @@ const tabs = {
       inactiveColor: 'rgba(207,235,239,0)',
     },
   },
-  HistoryStack: {
+  History: {
     // < Screen name
     labelStyle: {
       color: Colors.Cornflower_Blue,
@@ -83,9 +84,9 @@ export const TabsNavigator = () => {
           // itemOuterSpace	={15}
         />
       )}>
-      <Tab.Screen component={HomeScreen} name={'HomeStack'} />
-      <Tab.Screen component={SearchScreen} name={'SearchStack'} />
-      <Tab.Screen component={HistoryScreen} name={'HistoryStack'} />
+      <Tab.Screen component={HomeScreen} name={'Home'} />
+      <Tab.Screen component={CompareScreen} name={'Comparision'} />
+      <Tab.Screen component={HistoryScreen} name={'History'} />
     </Tab.Navigator>
   );
 };

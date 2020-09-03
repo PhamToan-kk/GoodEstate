@@ -22,7 +22,7 @@ const RecomendHorizonView = (props) =>
             container:{
                 width:270,
                 height:330,
-                marginRight:10,
+                marginRight:15,
                 backgroundColor:Colors.white
             },
             headerTxt:{
@@ -93,10 +93,12 @@ const RecomendHorizonView = (props) =>
                     </View>
     )    
         return(
-            <Morph style={iiemStyles.container}>
-                <RenderImageHeader/>
-                <RenderContentItem/>
-            </Morph>
+            <TouchableOpacity>
+                <Morph style={iiemStyles.container}>
+                    <RenderImageHeader/>
+                    <RenderContentItem/>
+                </Morph>
+            </TouchableOpacity>
         )
     }
 

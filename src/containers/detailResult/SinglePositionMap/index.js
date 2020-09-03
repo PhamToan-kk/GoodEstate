@@ -1,7 +1,7 @@
 import React ,{useState}from 'react';
 import { Text, View,StyleSheet } from 'react-native';
 import MapView, { PROVIDER_GOOGLE ,Marker,Callout} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
-import {ReturnButton} from '../../components'
+import {ReturnButton} from '../../../components'
 export const SinglePositionMap = (props) => 
 {
   const { navigation } = props
@@ -13,16 +13,39 @@ export const SinglePositionMap = (props) =>
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
        region={{
-        latitude: 20.982843,
-        longitude: 105.792014,
-        latitudeDelta: 0.009,
-        longitudeDelta: 0.009
+        latitude: (20.982843 + 20.988954 + 20.987576 )/3,
+        longitude: (105.792014 + 105.796788 + 105.798124)/3,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05
        }}
        customMapStyle={styleM?mapStyle:[]}
 
      >
-
            <Marker coordinate={{ latitude:20.982843, longitude: 105.792014 }} >
+             {/* <CustomMarker/> */}
+             <Callout style={{width: 60}}>
+              <View>
+                <Text>This is a plain view</Text>
+              </View>
+            </Callout>
+           </Marker>
+           <Marker coordinate={{ latitude:20.988954, longitude: 105.796788 }} >
+             {/* <CustomMarker/> */}
+             <Callout style={{width: 60}}>
+              <View>
+                <Text>This is a plain view</Text>
+              </View>
+            </Callout>
+           </Marker>
+           <Marker coordinate={{ latitude:20.987576, longitude: 105.798124 }} >
+             {/* <CustomMarker/> */}
+             <Callout style={{width: 60}}>
+              <View>
+                <Text>This is a plain view</Text>
+              </View>
+            </Callout>
+           </Marker>
+           <Marker coordinate={{ latitude:20.995912, longitude: 105.807945 }} >
              {/* <CustomMarker/> */}
              <Callout style={{width: 60}}>
               <View>
@@ -225,7 +248,6 @@ const mapStyle = [
 const styles = StyleSheet.create({
  container: {
    ...StyleSheet.absoluteFillObject,
-   
    width: '100%',
    justifyContent: 'flex-end',
    alignItems: 'center',

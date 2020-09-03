@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text ,StyleSheet,Dimensions,TouchableOpacity,Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors,Styles} from '../../styles'
-import {Morph,VectorIcon} from '../../components'
+import {Colors,Styles} from '../../../styles'
+import {Morph,VectorIcon} from '../../../components'
 import color from 'color'
 
 
@@ -42,7 +42,7 @@ const InnnerSheet =({data,navigation})=> {
 				<Text style={styles.titleSection}>Listing Agent</Text>
 				<View style={styles.ownerInfo}>
 					<View style={styles.avatarView}>
-						<Image source={require('../../assets/icons/user.png')} 
+						<Image source={require('../../../assets/icons/user.png')} 
 						style={{width:70,height:70,borderRadius:35}}
 						></Image>
 					</View>

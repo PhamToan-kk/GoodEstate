@@ -106,6 +106,20 @@ export const Colors = {
     gray_Text:'rgb(204,209,224)',
     Linear_white1: 'rgb(255,255,255)',
     Linear_white2:'rgb(247,247,247)',
-    Linear_white3:'rgb(244,244,244)'
+    Linear_white3:'rgb(244,244,244)',
+
+    Linear_white11: 'rgba(255,255,255,0.1)',
+    Linear_white22:'rgba(247,247,247,0.1)',
+    Linear_white33:'rgba(244,244,244,0.1)',
+
+
+    linear_yeloow1:'rgba(128,109,83,0.5)',
+    linear_yeloow2:'rgba(136,124,100,0.5)',
+    linear_yeloow3:'rgba(193,193,191,0.5)',
+
+
+
+
+
 
 }

@@ -2,14 +2,10 @@ import React from 'react';
 import { Text, View,StyleSheet,TouchableOpacity} from 'react-native';
 import{VectorIcon,TextInput} from '../../components'
 import {Colors,Styles} from '../../styles'
+
 const SearchView = ({
-    navigation
-}) => 
-{
-    const  searchHouse = ()=>{
-        navigation.navigate('Search')
-    }
-    return(
+    params,
+}) => (
     <View style={styles.container}>
         <View style={{flex:8,alignItems:'center'}}>
             <TextInput 
@@ -18,12 +14,12 @@ const SearchView = ({
             />
         </View>
         <View style={{flex:2,alignItems:'center'}}>
-            <TouchableOpacity style={styles.buttonSearch} onPress={searchHouse}>
+            <TouchableOpacity style={styles.buttonSearch} onPress={()=>{}}>
                 <Text style={styles.txtSearch}>Search</Text>
             </TouchableOpacity>
         </View>
     </View>
-)};
+);
 
 
 const styles = StyleSheet.create({
@@ -46,8 +42,9 @@ const styles = StyleSheet.create({
         flex:1,
         width:'90%',
         borderRadius:15,
-        backgroundColor:Colors.Cornflower_Blue_Opacity
+        backgroundColor:Colors.Cornflower_Blue
     }
 })
+
 
 export default SearchView;

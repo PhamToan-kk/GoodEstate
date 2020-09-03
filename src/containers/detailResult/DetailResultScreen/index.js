@@ -12,8 +12,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Swiper from 'react-native-swiper';
 import BottomSheet from 'reanimated-bottom-sheet';
-import {Colors,Styles} from '../../styles'
-import {Morph,VectorIcon,ReturnButton} from '../../components'
+import {Colors,Styles} from '../../../styles'
+import {Morph,VectorIcon,ReturnButton} from '../../../components'
 import color from 'color'
 import InnnerSheet from './InnnerSheet'
 
@@ -23,7 +23,7 @@ const {width,height} = Dimensions.get('window')
 export const DetailResultScreen = (props) => {
 	
   const {route, navigation} = props;
-  console.log('leu leu', route.params.item);
+  // console.log('leu leu', route.params.item);
   const data = route.params.item
   const imageUrl = route.params.item.imageUrl;
   const imagesUrls = ['https://media-cdn.tripadvisor.com/media/vr-splice-j/09/87/0a/7b.jpg', imageUrl, imageUrl];
