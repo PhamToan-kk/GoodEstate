@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
 const AppXX = ({
     params,
 }) => {
-    const isSignIn = true
+    const isSignIn = false
     return(
         <NavigationContainer>
                {isSignIn ?  

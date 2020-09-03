@@ -117,6 +117,10 @@ export const Colors = {
     linear_yeloow2:'rgba(136,124,100,0.5)',
     linear_yeloow3:'rgba(193,193,191,0.5)',
 
+  
+
+
+
 
 
 

@@ -26,6 +26,9 @@ const MainStack = createStackNavigator()
 export const AuthStackScreens = ({navigation})=>{
     return(
         <AuthStack.Navigator
+        screenOptions={{
+            headerShown:false
+        }}
         >
             <AuthStack.Screen component={SignInScreen} name={'SignIn'}/>
             <AuthStack.Screen component={RegisterScreen} name={'Register'}/>
