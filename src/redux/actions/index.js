@@ -18,7 +18,7 @@ export const signIn = (credentials) => {
   return {
     type: SIGN_IN_SUCCESS,
     payload: 
-  };
+  }
   // return {
   //     type:SiGN_IN_FAIL,
   //     payload:
