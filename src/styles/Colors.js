@@ -108,6 +108,9 @@ export const Colors = {
     Linear_white2:'rgb(247,247,247)',
     Linear_white3:'rgb(244,244,244)',
 
+    Linear_white4:'rgb(240,240,240)',
+
+
     Linear_white11: 'rgba(255,255,255,0.1)',
     Linear_white22:'rgba(247,247,247,0.1)',
     Linear_white33:'rgba(244,244,244,0.1)',

@@ -112,16 +112,18 @@ export const HomeScreen = (props) => {
       </View>
     </ScrollView>
   );
+
+// main view   
   return (
     <LinearGradient
       style={{flex: 1}}
       colors={[
-        Colors.Linear_white1,
         Colors.Linear_white2,
         Colors.Linear_white3,
+        Colors.Linear_white4,
       ]}>
       <View style={styles.container}>
-        <RenderHeader />
+        <RenderHeader  />
         <SearchView  navigation ={navigation}/>
         <RenderRecommend />
       </View>

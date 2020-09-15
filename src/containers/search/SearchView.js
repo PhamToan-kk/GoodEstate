@@ -1,21 +1,24 @@
 import React from 'react';
-import { Text, View,StyleSheet,TouchableOpacity} from 'react-native';
+import { Text, View,StyleSheet,TouchableOpacity,FlatList} from 'react-native';
 import{VectorIcon,TextInput} from '../../components'
 import {Colors,Styles} from '../../styles'
+
+
 
 const SearchView = ({
     params,
 }) => (
     <View style={styles.container}>
-        <View style={{flex:8,alignItems:'center'}}>
+        <View style={styles.leftForm}>
             <TextInput 
-            placeholder={'find house ......'} style={{width:'100%',height:'100%'}}
+            placeholder={'find house ......'} 
+            style={{width:'100%',height:'100%',backgroundColor:'rgba(255,255,255,0.2)'}}
             leftComponent={<VectorIcon EvilIcons name={'search'} size={30} color ={Colors.Link_Water} />}
             />
         </View>
-        <View style={{flex:2,alignItems:'center'}}>
+        <View style={styles.rightForm}>
             <TouchableOpacity style={styles.buttonSearch} onPress={()=>{}}>
-                <Text style={styles.txtSearch}>Search</Text>
+                <Text style={styles.txtSearch}>Find </Text>
             </TouchableOpacity>
         </View>
     </View>
@@ -27,13 +30,17 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         margin:10,
         height:50
-
-        // alignItems:'center'
+    },
+    rightForm:{
+        flex:2,alignItems:'center'
+    },
+    leftForm:{
+        flex:8,alignItems:'center'
     },
     txtSearch:{
         fontSize:18,
         fontWeight:'500',
-        color:Colors.Cornflower_Blue,
+        color:Colors.white,
         lineHeight:24,
         textAlign:'center'
     }  ,
@@ -42,7 +49,7 @@ const styles = StyleSheet.create({
         flex:1,
         width:'90%',
         borderRadius:15,
-        backgroundColor:Colors.Cornflower_Blue
+        backgroundColor:'rgb(48,93,151)'
     }
 })
 

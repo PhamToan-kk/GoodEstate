@@ -57,9 +57,8 @@ export const TextInput = (props) => {
       width: useWindowDimensions().width - 50,
       height: 60,
       marginBottom:20,
-      ...style,
       borderWidth:0.3,
-      backgroundColor:'rgb(247,247,247)'
+      ...style
     },
     input: {
       minHeight: 45,

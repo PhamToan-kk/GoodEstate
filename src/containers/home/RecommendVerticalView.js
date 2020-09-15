@@ -4,63 +4,63 @@ import {Colors, Styles} from '../../styles';
 import {Morph, VectorIcon} from '../../components';
 import color from 'color';
 const RecommendVerticalView = (props) => {
-  const {data, navigation} = props;
+    const {data, navigation} = props;
 
-  const showResultDeatail = (item) => {
+    const showResultDeatail = (item) => {
     navigation.navigate('DetailResult', {item: item});
-  };
+    };
 
-  const RenderHeader = () => (
-    <View style={styles.header}>
-       <Text style={styles.headerTxt}>Luxury villas</Text>
-       <TouchableOpacity>
-           <Text style={styles.viewAllTxt}>View All</Text>
-       </TouchableOpacity>
-    </View>
-  );
+    const RenderHeader = () => (
+      <View style={styles.header}>
+         <Text style={styles.headerTxt}>Luxury villas</Text>
+         <TouchableOpacity>
+             <Text style={styles.viewAllTxt}>View All</Text>
+         </TouchableOpacity>
+      </View>
+    );
 
   const RenderListRecommend = ({data}) => {
-    const LeftItem = ({item}) => (
-      <View style={styles.leftItem}>
-        <Image
-          style={{width: '80%', height: '80%', borderRadius: 10}}
-          source={{uri: item.imageUrl}}></Image>
-      </View>
-    );
-    const RighItem = ({item}) => (
-      <View style={styles.rightItem}>
-        <View style={styles.content}>
-          <Text style={styles.headerItemTxt}>{item.type}</Text>
-          <Text style={styles.addressItemTxt}>{item.address}</Text>
-          <View style={styles.rateItem}>
-            <VectorIcon
-              FontAwesome
-              name="star"
-              size={20}
-              color={Colors.yellowOrange}
-            />
-            <Text style={styles.starTxt}>5</Text>
-          </View>
-          <View style={styles.itemPrice}>
-            <Text style={styles.$Txt}>
-              $ <Text style={{fontSize: 20}}>{item.price}</Text>
-            </Text>
-            <Morph
-              style={{
-                width: 50,
-                height: 50,
-                borderRadius: 25,
-                ...Styles.mid_centerView
-              }}>
-              <View style={styles.heartView}>
-                <VectorIcon AntDesign name="heart" size={15} color="white" />
-              </View>
-            </Morph>
-          </View>
+        const LeftItem = ({item}) => (
+        <View style={styles.leftItem}>
+            <Image
+            style={{width: '80%', height: '80%', borderRadius: 10}}
+            source={{uri: item.imageUrl}}></Image>
         </View>
-      </View>
-    );
-return (
+        );
+        const RighItem = ({item}) => (
+            <View style={styles.rightItem}>
+                <View style={styles.content}>
+                <Text style={styles.headerItemTxt}>{item.type}</Text>
+                <Text style={styles.addressItemTxt}>{item.address}</Text>
+                <View style={styles.rateItem}>
+                    <VectorIcon
+                    FontAwesome
+                    name="star"
+                    size={20}
+                    color={Colors.yellowOrange}
+                    />
+                    <Text style={styles.starTxt}>5</Text>
+                </View>
+                <View style={styles.itemPrice}>
+                    <Text style={styles.$Txt}>
+                    $ <Text style={{fontSize: 20}}>{item.price}</Text>
+                    </Text>
+                    <Morph
+                    style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: 25,
+                        ...Styles.mid_centerView
+                    }}>
+                    <View style={styles.heartView}>
+                        <VectorIcon AntDesign name="heart" size={15} color="white" />
+                    </View>
+                    </Morph>
+                </View>
+                </View>
+            </View>
+            );
+    return (
       <View>
         {data.map((item) => {
           return (

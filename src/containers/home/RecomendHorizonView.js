@@ -14,7 +14,16 @@ import color from 'color';
 const RecomendHorizonView = (props) => 
 {
 
-    const {data} = props
+    const {data,navigation} = props
+
+    const showResultDeatail = (item) => {
+        console.log('send',item)
+        navigation.navigate('DetailResult', {item: item});
+        };
+    const  showListResult = ()=>{
+        navigation.navigate('Search');
+
+    }
 
     const renderItem=({item})=>{
 
@@ -64,7 +73,7 @@ const RecomendHorizonView = (props) =>
             <View style={{flex:1}}>
                         <Image
                         source={{uri:item.imageUrl}}
-                        style={{width:'100%',height:'100%',borderRadius: 12,}}
+                        style={styles.img}
                         ></Image>
             </View>
         )
@@ -92,8 +101,9 @@ const RecomendHorizonView = (props) =>
                         </View>
                     </View>
     )    
+        // Render main Item
         return(
-            <TouchableOpacity>
+            <TouchableOpacity onPress={(item)=>showResultDeatail(item)}>
                 <Morph style={iiemStyles.container}>
                     <RenderImageHeader/>
                     <RenderContentItem/>
@@ -101,12 +111,13 @@ const RecomendHorizonView = (props) =>
             </TouchableOpacity>
         )
     }
+// Render main Item
 
 return(
     <View style={{flex:1}}>
         <View style={styles.header}>
             <Text style={styles.headerTxt}>Luxury Apartment</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={showListResult}>
                 <Text style={styles.viewAllTxt}>View All</Text>
             </TouchableOpacity>
         </View>
@@ -141,6 +152,9 @@ const styles = StyleSheet.create({
         fontSize:15,
         fontWeight:'500',
         color:Colors.Cornflower_Blue,
+    },
+    img:{
+        width:'100%',height:'100%',borderRadius: 12,
     }
 })
 export default RecomendHorizonView;

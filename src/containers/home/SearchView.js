@@ -13,7 +13,8 @@ const SearchView = ({
     <View style={styles.container}>
         <View style={{flex:8,alignItems:'center'}}>
             <TextInput 
-            placeholder={'find house ......'} style={{width:'100%',height:'100%'}}
+            placeholder={'find house ......'} 
+            style={{width:'100%',height:'100%',backgroundColor:'transparent'}}
             leftComponent={<VectorIcon EvilIcons name={'search'} size={30} color ={Colors.Link_Water} />}
             />
         </View>
